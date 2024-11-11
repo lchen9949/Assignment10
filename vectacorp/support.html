@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Welcome to Vecta Corp.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/jquery.mobilemenu.js"></script>-->
+
+	<script src="js/jquery-3.7.1.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+	<script>
+		$(document).ready(function(){
+
+			//$('nav ul li a:eq(3)').tooltip();
+			$('a[href="support.html"]').hover(function () {
+				var $tooltext = $(this).find('.tooltip-text4');
+				$tooltext.show();
+				var triggerOffset = $(this).offset();
+				var triggerHeight = $(this).outerHeight();
+				var tooltipWidth = $tooltext.outerWidth();
+				var tooltipHeight = $tooltext.outerHeight();
+				$tooltext.css({
+					top: triggerOffset.top - tooltipHeight-10,
+					left: triggerOffset.left + ($(this).outerWidth()/2) - (tooltipWidth/2)
+				});
+			}, function () {
+				$(this).find('.tooltip-text4').hide;
+
+			});
+		});
+
+	</script>
+</head>
+<body>
+	<main class="container">
+		<figure class="three columns">
+			<img src="images/logo.gif" class="scale-with-grid" alt="">
+		</figure>
+		
+		<nav class="thirteen columns">
+			<ul id="responsive-menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="solutions.html">Solutions</a></li>
+				<li><a href="support.html" title="Need any support? Just let us know.">Support</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
+			</ul>
+
+			<div class='tooltip-text4' style="position:absolute; display:none; background-color: #d69f9f; font-size: 2em;">Need any support? Just let us know.</div>
+
+		</nav>
+		
+		<header class="sixteen columns">
+			<img src="images/header.gif" class="scale-with-grid" alt="">
+		</header>
+		
+		<section id="welcome" class="sixteen columns">
+			<h4>Support</h4>
+			<p>Find the latest technical resources including articles, tips, patches, documentation and more and discuss ideas with your peers. These communities are your convenient one-stop shop for vSupport. Still have a question? <a href="mailto:support@vectacorp.com?Subject=I%20need%20help...">Send us an email</a>.</p>
+		</section>
+
+		
+
+	</main>
+</body>
+</html>

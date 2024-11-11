@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Welcome to Vecta Corp.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/jquery.mobilemenu.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			//console.log('here it is.')
+			//$('nav ul li a:eq(0)').tooltip();
+			$('a[href="index.html"]').hover(function () {
+				var $tooltext = $(this).find('.tooltip-text1');
+				$tooltext.show();
+				var triggerOffset = $(this).offset();
+				var triggerHeight = $(this).outerHeight();
+				var tooltipWidth = $tooltext.outerWidth();
+				var tooltipHeight = $tooltext.outerHeight();
+				$tooltext.css({
+					top: triggerOffset.top - tooltipHeight-10,
+					left: triggerOffset.left + ($(this).outerWidth()/2) - (tooltipWidth/2)
+				});
+			}, function () {
+				$(this).find('.tooltip-text1').hide;
+
+			});
+
+			$('#tabs').tabs();
+			$('#accordion').accordion();
+
+		});
+	</script>
+</head>
+<body>
+	<main class="container">
+		<figure class="three columns">
+			<img src="images/logo.gif" class="scale-with-grid" alt="">
+		</figure>
+		
+		<nav class="thirteen columns">
+			<ul id="responsive-menu">
+				<li><a href="index.html" title="Vecta Corporation provides scalable business solutions to help companies achieve success through revenue increase, cost management, and user satisfaction.">Home</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="solutions.html">Solutions</a></li>
+				<li><a href="support.html">Support</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
+			</ul>
+
+			<div class='tooltip-text1' style="position:absolute; display:none; background-color: #d69f9f; font-size: 2em;">Vecta Corporation provides scalable business solutions to help companies achieve success through revenue increase, cost management, and user satisfaction.</div>
+
+		</nav>
+		
+		<header class="sixteen columns">
+			<img src="images/header.gif" class="scale-with-grid" alt="">
+		</header>
+		
+		<section id="welcome" class="five columns">
+			<h4>Welcome</h4>
+
+			<p>With innovative approaches and advanced methodologies, Vecta Corporation provides scalable business solutions to help companies achieve success through revenue increase, cost management, and user satisfaction. Our approach stems from the three most important business growth aspects: helping companies reach prospects, assist in converting prospects to customers, and assist in retaining those customers. This is accomplished through our interactive solutions and expertise in providing a memorable and positive user experience.</p>
+		</section>
+		
+		<section id="solutions" class="six columns">
+			<h4>Our Solutions</h4> 
+			<div id="tabs">
+				<ul>
+					<li><img src="images/logo_vprospect.gif" alt="vprospect"><a href="#tab1">vProspect 2.0</a></li>
+					<li><img src="images/logo_vconvert.gif" alt="vconvert"><a href="#tab2">vConvert 2.0</a></li>
+					<li><img src="images/logo_vretain.gif" alt="vretain"><a href="#tab3">vRetain 1.0</a></li>
+				</ul>
+				<div id="tab1">
+					<p>Define and research your target audience, define your strategy to reach that audience and present a strong and memorable brand to that audience.</p>
+				</div>
+				<div id="tab2">
+					<p>Create a highly user-friendly and easy-to-navigate information architecture that will help your prospects interact with the company on a highly interactive level.</p>
+				</div>
+				<div id="tab3">
+					<p>Build on existing customer relationships to improve productivity and maximize customer loyalty, while growing revenues.</p>
+				</div>
+			</div>
+			
+
+			<!-- INSERT TABS HERE -->
+		</section>
+		
+		<section id="testimonials" class="five columns">
+			<h4>Client Testimonials</h4>
+			<div id="accordion">
+				<h5>Tesimonials I</h5>
+				<div>
+					<p>Throughout the years we have worked with Vecta Corporation, we have always been amazed at the level of dedication and professionalism that they have provided us and our WGDC products. It is this commitment that has increased both our income and exposure exponentially.</p>
+					<p>Iona Ford<br>
+						President<br>
+						Chevy Dealers Association</p>
+				</div>
+				<h5>Tesimonials II</h5>
+				<div>
+					<p>Incredible results from an incredible effort by the Vecta Corporation team! We are very pleased with the business benefits we have rceived by working with them.</p>
+					<p>Robin Banks<br>
+						CEO<br>
+						Profits Financial, Inc.</p>
+				</div>
+			</div>
+
+			<!-- INSERT ACCORDION HERE -->
+		</section>
+	</main>
+</body>
+</html>
